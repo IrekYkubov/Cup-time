@@ -235,7 +235,7 @@ input[type=number] {
 }
 .cart__items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 .cart-item {
@@ -436,6 +436,11 @@ input[type=number] {
   right: 24px;
   cursor: pointer;
 }
+.skeleton-wrapper {
+  width: 100%;
+  height: 600px;
+  background-color: #f2f9f7;
+}
 @media (max-width: 1240px) {
   .container {
     padding: 0 42px;
@@ -482,6 +487,9 @@ input[type=number] {
   }
   .order__form {
     max-width: 620px;
+  }
+  .skeleton-wrapper {
+    height: 450px;
   }
 }
 @media (max-width: 940px) {
@@ -610,6 +618,9 @@ input[type=number] {
   }
   .order__payment {
     padding-top: 8px;
+  }
+  .skeleton-wrapper {
+    height: 360px;
   }
 
 }
