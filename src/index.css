@@ -22,6 +22,7 @@ body {
   font-size: 20px;
   line-height: 1.24;
   color: #1d1c1d;
+  min-width: 320px;
 }
 
 ul {
@@ -75,6 +76,7 @@ input[type=number] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 6px;
 }
 .header__logo-link {
   font-size: 0;
@@ -100,11 +102,24 @@ input[type=number] {
   text-align: center;
   padding: 10px 4px 3px;
 }
+.header__control {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header__close-btn {
+  display: none;
+}
+.header__burger {
+  display: none;
+}
+
 .promo {
   background-color: #6cb9ab;
   color: #fff;
 }
 .promo__container {
+  min-height: 600px;
   padding-top: 210px;
   padding-bottom: 80px;
   background-image: url('/image/promo-bg.png');
@@ -149,6 +164,8 @@ input[type=number] {
   flex-direction: column;
   color: #1d1c1d;
   height: 100%;
+  border-radius: 6px;
+  overflow: hidden;
 }
 .product__image {
   width: 100%;
@@ -441,6 +458,26 @@ input[type=number] {
   height: 600px;
   background-color: #f2f9f7;
 }
+.modal-cart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+}
+.modal-cart__overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  inset: 0;
+}
+.modal-cart__title {
+  font-size: 40px;
+}
+
 @media (max-width: 1240px) {
   .container {
     padding: 0 42px;
@@ -454,6 +491,7 @@ input[type=number] {
     padding: 12px 22px;
   }
   .promo__container {
+    min-height: 482px;
     padding-top: 172px;
     padding-bottom: 60px;
     background-image: url('/image/promo-bg-1024.png');
@@ -631,10 +669,45 @@ input[type=number] {
   .header__container {
     padding: 12px 0;
   }
-  .header__menu {
+  .header__nav {
     display: none;
   }
+  .header__burger {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .header__nav.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    height: 100vh;
+    background-color: #6cb9ab;
+  }
+  .header__menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .header__close-btn {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
   .promo__container {
+    min-height: 420px;
     padding-top: 120px;
     padding-bottom: 348px;
     background-image: url('/image/promo-bg-320.png');
